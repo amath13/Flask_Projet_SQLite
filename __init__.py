@@ -4,6 +4,15 @@ from flask import json
 from urllib.request import urlopen
 from werkzeug.utils import secure_filename
 import sqlite3
+from flask import Flask
+
+app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+import app
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 app = Flask(__name__)                                                                                                                  
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # Clé secrète pour les sessions
