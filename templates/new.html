@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche de Client</title>
+</head>
+<body>
+    <h2>Recherche de Client par Nom</h2>
+    <form action="{{ url_for('rechercher_par_nom') }}" method="post">
+        <label for="nom">Nom du Client :</label>
+        <input type="text" id="nom" name="nom">
+        <input type="submit" value="Rechercher">
+    </form>
+    {% if data %}
+        <h3>Résultats de Recherche :</h3>
+        <ul>
+        {% for client in data %}
+            <li>{{ client }}</li>
+        {% endfor %}
+        </ul>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
